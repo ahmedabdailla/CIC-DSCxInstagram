@@ -1,76 +1,42 @@
-import 'package:CICxInstagram/screens/index.dart';
-import 'package:CICxInstagram/widgets/AppBars.dart';
+import 'dart:ui';
+
+import 'package:CICxInstagram/screens/widgets/post.dart';
+import 'package:CICxInstagram/screens/widgets/stories.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
-class Timeline extends StatefulWidget {
- final Function() notifyParent;
-  Timeline({Key key, @required this.notifyParent}) : super(key: key);
-
-  @override
-  _TimelineState createState() => _TimelineState();
-}
-
-class _TimelineState extends State<Timeline> {
-  _IndexState parent;
-
-  Sub(this.parent);
-  int _selectedIndex = 0;
-
-  @override
-  void initState() {
-    super.initState();
-  }
-
-  void _onItemTapped(int index) {
-    this.parent.setState(() {
-      _selectedIndex = index;
-    });
-  }
+class Timeline extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-      appBar: AppBars().main(),
-      body: new Text("Timeline"),
-      bottomNavigationBar: BottomNavigationBar(
-        showSelectedLabels: false,
-        showUnselectedLabels: false,
-        type: BottomNavigationBarType.fixed,
-        currentIndex: _selectedIndex,
-        onTap: _onItemTapped,
-        items: [
-          new BottomNavigationBarItem(
-            icon: new Image.asset('lib/assets/Home.png', width: 25),
-            title: new Text("Home"),
-          ),
-          new BottomNavigationBarItem(
-            icon: new Image.asset('lib/assets/Search.png', width: 25),
-            title: new Text("Search"),
-          ),
-          new BottomNavigationBarItem(
-            icon: new Image.asset(
-              'lib/assets/AddNew.png',
-              width: 25,
-            ),
-            title: new Text("Add New"),
-          ),
-          new BottomNavigationBarItem(
-            icon: new Image.asset(
-              'lib/assets/Heart-active.png',
-              width: 25,
-              color: Colors.black,
-            ),
-            title: new Text("Likes"),
-          ),
-          new BottomNavigationBarItem(
-            icon: new Image.asset(
-              'lib/assets/AddNew.png',
-              width: 25,
-            ),
-            title: new Text("Profile"),
-          )
-        ],
-      ),
+      body: ListView(children: <Widget>[
+        Stories(),
+        Post(
+          name: "Ahmed Abdallah",
+          imageLink: "lib/assets/posts/AhmedPost1.jpg",
+          profileImageLink: "lib/assets/posts/AhmedImage.jpg",
+        ),
+        Post(
+          name: "CIC - Canadian International College",
+          imageLink: "lib/assets/posts/CICPOST.jpg",
+          profileImageLink: "lib/assets/posts/CIC.png",
+        ),
+        Post(
+          name: "Ahmed Abdallah",
+          imageLink: "lib/assets/posts/AhmedPost2.jpg",
+          profileImageLink: "lib/assets/posts/AhmedImage.jpg",
+        ),
+        Post(
+          name: "DSC CIC",
+          imageLink: "lib/assets/posts/DSCCIC.jpg",
+          profileImageLink: "lib/assets/posts/DSCCICPOST1.png",
+        ),
+        Post(
+          name: "Ahmed Abdallah",
+          imageLink: "lib/assets/posts/AhmedPost3.jpg",
+          profileImageLink: "lib/assets/posts/AhmedImage.jpg",
+        ),
+      ]),
     );
   }
 }

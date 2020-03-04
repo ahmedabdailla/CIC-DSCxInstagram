@@ -49,9 +49,19 @@ flutter:
   - lib/assets/Search.png
   - lib/assets/Heart-active.png
   - lib/assets/Camera.png
+  - lib/assets/Comment.png
+  - lib/assets/Save.png
   - lib/assets/Send.png
   - lib/assets/IGTV.png
   - lib/assets/Settings.png
+  - lib/assets/posts/CIC.png
+  - lib/assets/posts/CICPOST.jpg
+  - lib/assets/posts/AhmedPost1.jpg
+  - lib/assets/posts/AhmedPost2.jpg
+  - lib/assets/posts/AhmedPost3.jpg
+  - lib/assets/posts/AhmedImage.jpg
+  - lib/assets/posts/DSCCIC.jpg
+  - lib/assets/posts/DSCCICPOST1.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

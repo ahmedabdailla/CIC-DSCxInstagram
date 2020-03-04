@@ -3,27 +3,26 @@ import 'package:flutter/material.dart';
 class AppBars extends AppBar {
   AppBar main() {
     return new AppBar(
-      //2
-      leading: new ButtonBar(
-        children: <Widget>[
-          new Image.asset(
+      leading: new FlatButton(
+          onPressed: () {
+            /*...*/
+          },
+          child: new Image.asset(
             'lib/assets/Camera.png',
-            width: 50,
+            width: 150,
             color: Colors.black,
-          )
-        ],
-      ),
+          )),
       title: Image.asset('lib/assets/InstagramLogo.png'),
       actions: <Widget>[
-        new ButtonBar(
-          children: <Widget>[
-            new Image.asset(
+        new FlatButton(
+            onPressed: () {
+              /*...*/
+            },
+            child: new Image.asset(
               'lib/assets/Send.png',
               width: 25,
               color: Colors.black,
-            )
-          ],
-        )
+            ))
       ],
       backgroundColor: Colors.white,
       centerTitle: true,
@@ -34,11 +33,21 @@ class AppBars extends AppBar {
     return new AppBar(
       //2
       title: new TextField(
-        obscureText: true,
+        autofocus: true,
         decoration: InputDecoration(
-          border: OutlineInputBorder(),
-          labelText: 'Password',
-        ),
+            filled: true,
+            fillColor: Color.fromARGB(10, 0, 0, 0),
+            hintText: "Search",
+            border: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(6),
+              borderSide: BorderSide(
+                width: 0,
+                style: BorderStyle.none,
+              ),
+            ),
+            hintStyle: TextStyle(color: Colors.grey),
+            contentPadding: EdgeInsets.all(10)),
+        style: TextStyle(color: Colors.black, fontSize: 16.0),
       ),
       backgroundColor: Colors.white,
       centerTitle: true,
